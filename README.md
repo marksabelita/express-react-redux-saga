@@ -1,5 +1,5 @@
 
-![alt text](https://raw.githubusercontent.com/marksabelita/webpack-react-redux-saga/master/src/images/logo.png)
+![alt text](https://raw.githubusercontent.com/marksabelita/todo-list/master/src/images/logo.png)
 
 Todo list app Epress-Mean-React-Redux-Saga
 

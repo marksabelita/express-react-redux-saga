@@ -7,6 +7,9 @@ Beginner friendly React-Redux-Saga
 
 This boilerplate features all the latest tools and practices in the industry.
 
+- _Express.js_ - **React**, Backend
+-_Moongose.js_ - *Moongose** NoSQL management
+-_MongoDB_ - **MongoDb** NoSQL Database for database
 - _React.js_ - **React**, React router
 - _Redux.js_ - **React Redux** State management, Redux router, Redux saga(state management)
 - _Babel_ - ES6, and React/Recommended config
@@ -26,7 +29,7 @@ npm install
 ```
 - Run development environment
 ```
-npm run dev to run development environment.
+npm run dev
 ```
 - Run production build.
 ```

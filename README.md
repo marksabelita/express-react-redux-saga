@@ -1,7 +1,7 @@
 
 ![alt text](https://raw.githubusercontent.com/marksabelita/webpack-react-redux-saga/master/src/images/logo.png)
 
-Beginner friendly React-Redux-Saga
+Todo list app Epress-Mean-React-Redux-Saga
 
 ## Key Features
 
@@ -31,9 +31,9 @@ npm install
 ```
 npm run dev
 ```
-- Run production build.
+- Run production .
 ```
-npm run build 
+npm run start 
 ```
 
 ## Running the tests

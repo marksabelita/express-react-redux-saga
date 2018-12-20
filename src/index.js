@@ -7,6 +7,7 @@ import createHistory from "history/createBrowserHistory";
 import store from './store';
 
 import Todos from './components/todos';
+import './style.scss';
 
 const history = createHistory();
 

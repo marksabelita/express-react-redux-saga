@@ -3,7 +3,7 @@ const TodoSchema = require('./schema');
 class TodoModel {
   getTasks() {
     return new Promise((resolve, reject) => {
-      TodoSchema.find({}, function (err, todos) {
+      TodoSchema.find({}, {}, { sort: { 'created_at': -1 } }, function (err, todos) {
         (err) ? reject(err) : resolve(todos);
       })
     })
@@ -11,7 +11,7 @@ class TodoModel {
 
   getTaskById(id) {
     return new Promise((resolve, reject) => {
-      TodoSchema.findById(id, function (err, todo) {
+      TodoSchema.findById(id,  function (err, todo) {
         (err) ? reject(err) : resolve(todo);
       })
     });
@@ -19,7 +19,7 @@ class TodoModel {
 
   updateTask(id, status) {
     return new Promise((resolve, reject) => {
-      TodoSchema.findByIdAndUpdate(id, { $set: { done: status } }, function(err, result) {
+      TodoSchema.findByIdAndUpdate(id,  { $set: { done: status } }, function(err, result) {
         (err) ? reject(err) : resolve(result);
       });
     })

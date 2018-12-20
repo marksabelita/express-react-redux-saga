@@ -1,0 +1,51 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+  },
+  "rules": {
+   "new-cap": [2, { "capIsNewExceptions": ["List", "Map", "Set"] }],
+    "eol-last": ["error", "never"],
+    "arrow-body-style": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "react/no-multi-comp": 0,
+    "import/no-duplicates": 0,
+    "import/named": 0,
+    "import/namespace": 0,
+    "import/no-unresolved": 0,
+    "import/no-named-as-default": 2,
+    "comma-dangle": 0,
+    "no-console": 0,
+    "no-alert": 0,
+    "linebreak-style": 0,
+    "import/newline-after-import": 0,
+    "object-shorthand": 0,
+    "import/default": 2,
+    "import/export": 2,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-mutable-exports" : 0,
+    "no-underscore-dangle" : 0,
+    "prefer-rest-params": 0,
+    "import/prefer-default-export": 0,
+    "react/no-unused-prop-types": 0,
+    "no-unused-labels": 0,
+    "no-constant-condition": 0
+  },
+  "settings": {
+    "import/ignore": [
+      "node_modules"
+    ]
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "parser": "babel-eslint"
+}

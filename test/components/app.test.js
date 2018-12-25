@@ -1,7 +1,7 @@
 import { renderComponent, expect } from '../test-helper';
-import App from '../../src/components/app';
+import App from '../../src/components/todos';
 
-describe('App', () => {
+describe('Todos', () => {
   let component;
 
   beforeEach(() => {
@@ -9,8 +9,7 @@ describe('App', () => {
   });
 
   it('renders something', () => {
-    expect(component).to.have.class('home');
-    expect(component.find('home').length).to.equal(0);
-    expect(component).to.contain('Home route');
+    expect(component.find('list-group-item').length).to.equal(0);
+    expect(component).to.contain('Todo list:');
   });
 });

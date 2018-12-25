@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import moment from 'moment';
 
 import { connect } from 'react-redux';
 import { getTodos, deleteTodo, updateTodo, createTodo } from '../actions/todos';
+import TodoList from './container/todo-list';
+import TodoForm from './forms/todo-form';
 
 class Todos extends Component {
 
@@ -19,37 +20,6 @@ class Todos extends Component {
   componentDidMount() {
     const { getTodos } = this.props;
     getTodos();
-  }
-
-  renderTodos() {
-    const { todos } = this.props;
-
-    if(todos.list.length > 0){
-      return todos.list.map(todo => {
-        return (
-          <li className={"list-group-item " + (todo.done ? "done" : "") } key={todo._id}> 
-            <span className="float-left"> {todo.task} </span>
-            <strong>{moment(todo.created_at).format('MMMM Do YYYY, h:mm:ss')}</strong>
-
-            <span onClick={() => this.onClickDelete(todo._id) }  className="float-right"> <i className="far fa-trash-alt"></i> </span>
-            <span onClick={() => this.onClickUpdateTodo(todo)} className="float-right"> <i className='far fa-check-circle'></i> </span>
-          </li>
-        )
-      })
-    }
-  }
-
-  renderForm() {
-    return(
-      <form className="form-inline new-task" onSubmit={ this.onSubmit }>
-        <div className="form-group col-sm-10">
-          <input onChange={() => this.onChangeTask(event.target.value) } value={this.state.newTask} type="text" className="form-control" id="inputPassword2" placeholder="New Task"/>
-        </div>
-        <div className="col-sm-2">
-          <button type="submit" className="btn btn-primary">Create</button>
-        </div>
-      </form>
-    )
   }
 
   onSubmit(e){
@@ -78,16 +48,17 @@ class Todos extends Component {
   }
   
   render() {
-    console.log(this.props);
+    const { todos } = this.props;
+
     return (
       <div className="">
         <div className="col-sm-12">
           <h3> Todo list: </h3>
         </div>
-        {this.renderForm()}
+        <TodoForm onChangeTask={this.onChangeTask} onSubmit ={this.onSubmit} newTask={ this.state.newTask } />
         <div className="col-sm-12">
           <ul className="list-group">
-            {this.renderTodos()}
+            <TodoList todos={todos} onClickDelete={this.onClickDelete} onClickUpdateTodo={this.onClickUpdateTodo} />
           </ul>
         </div>
       </div>

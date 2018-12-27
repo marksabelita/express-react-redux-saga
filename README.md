@@ -33,7 +33,7 @@ npm run dev
 ```
 - Run production .
 ```
-npm run start 
+npm run prod
 ```
 
 ## Running the tests

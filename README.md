@@ -19,6 +19,10 @@ This boilerplate features all the latest tools and practices in the industry.
 - _Styles_ - **SCSS Styling**
 
 
+## Heroku deployment
+> https://mstodolist.herokuapp.com
+
+
 ## Quick start
 
 - Clone this repo using git clone https://github.com/marksabelita/webpack-react-redux-saga.git

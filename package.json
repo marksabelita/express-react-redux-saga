@@ -7,10 +7,11 @@
     "test": "mocha --require @babel/register --recursive ./test || exit 0",
     "client": "webpack-dev-server --mode development --config config/webpack.base.config.js --open --hot --history-api-fallback",
     "build": "webpack --mode production --config config/webpack.prod.config.js --env.NODE_ENV=production --progress",
-    "start": "npm run build && node ./server/index.js",
+    "start": "node ./server/index.js",
     "server": "nodemon ./server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"", 
-    "heroku-postbuild": "npm run start || exit 0"
+    "heroku-postbuild": "npm run build", 
+    "prod": "npm run build && node ./server/index.js"
   },
   "keywords": [],
   "author": "",

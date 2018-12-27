@@ -2,6 +2,9 @@ import { put, takeLatest, all, call } from 'redux-saga/effects';
 import { FETCH_TODOS, GET_TODOS, FETCH_ERROR, DELETE_TODO, UPDATE_TODO, CREATE_TODO } from '../actions/type';
 import axios from 'axios';
 
+const hostname = window && window.location && window.location.hostname;
+const API_URL = (hostname === 'localhost') ? 'http://localhost:8080' : '';
+
 function getRequest(data) {
   return axios.request({
     method: 'get',
@@ -26,7 +29,7 @@ function deleteRequest(data) {
 
 function* deleteTodo(params){
   try {
-    const response = yield call(deleteRequest, { 'url': `http://localhost:8080/api/todos/${params.id}` });
+    const response = yield call(deleteRequest, { 'url': `${API_URL}/api/todos/${params.id}` });
     if (response.status === 200) {
       
       yield put({ type: GET_TODOS  });
@@ -40,7 +43,7 @@ function* deleteTodo(params){
 
 function* getTodos() {
   try {
-    const response = yield call(getRequest, { 'url': 'http://localhost:8080/api/todos' });
+    const response = yield call(getRequest, { 'url': `${API_URL}/api/todos` });
     if (response.status === 200) {
       yield put({ type: FETCH_TODOS, payload: response.data.result });
     } else {
@@ -55,7 +58,7 @@ function* updateTodo(params){
   try {
     const { _id, done } = params.update;
     const payload = {
-      url: `http://localhost:8080/api/todo/${_id}`,
+      url: `${API_URL}/api/todo/${_id}`,
       body:{
         done: (done) ? false : true
       }
@@ -75,7 +78,7 @@ function* updateTodo(params){
 function* createTodo(params){
   try {
     const payload = {
-      url: `http://localhost:8080/api/todos`,
+      url: `${API_URL}/api/todos`,
       body: params.create
     }
 

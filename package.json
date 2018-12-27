@@ -10,7 +10,7 @@
     "start": "npm run build && node ./server/index.js",
     "server": "nodemon ./server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"", 
-    "heroku-postbuild": "npm run start"
+    "heroku-postbuild": "npm run start || exit 0"
   },
   "keywords": [],
   "author": "",

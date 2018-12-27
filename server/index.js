@@ -27,4 +27,5 @@ app.post('/api/todos', todosController.create);
 app.delete('/api/todos/:id', todosController.delete);
 app.post('/api/todo/:id', todosController.update);
 
-app.listen(8080, () => console.log('Listening on port 8080!')); 
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log('Listening on port ' + port));

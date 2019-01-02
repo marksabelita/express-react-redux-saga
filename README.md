@@ -25,7 +25,7 @@ This boilerplate features all the latest tools and practices in the industry.
 
 ## Quick start
 
-- Clone this repo using git clone https://github.com/marksabelita/webpack-react-redux-saga.git
+- Clone this repo using git clone https://github.com/marksabelita/todo-list.git
 - Move to the appropriate directory: cd webpack-react-redux-saga.
 - Install dependencies
 ```
